@@ -9,8 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let apiServices : ApiServices = ApiServices();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        apiServices.fetchMobileDataUsage();
         // Do any additional setup after loading the view.
     }
 

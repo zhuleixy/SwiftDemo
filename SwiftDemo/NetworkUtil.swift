@@ -11,15 +11,17 @@ class NetworkUtil: NSObject {
     
 
     func get(url: String,
-             params: [String:String],
+             params: [String:String]!,
              success: @escaping (Any) -> Void,
              failure: @escaping (Error) -> Void) -> Void {
         
         
         var items = [URLQueryItem]()
+
         for (key,value) in params {
             items.append(URLQueryItem(name: key, value: value))
         }
+        
         let urlComp = NSURLComponents(string: url)!
         if !items.isEmpty {
             urlComp.queryItems = items
@@ -30,7 +32,16 @@ class NetworkUtil: NSObject {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            
+            
+          
+            guard let array = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: AnyObject]] else {//转化失败就返回
+                 return
+            }
 
+
+            
+            print(array)
         })
         task.resume()
     }
