@@ -16,7 +16,8 @@
 		18D8F99E2650F3F900023282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D8F99C2650F3F900023282 /* LaunchScreen.storyboard */; };
 		18D8F9A92650F3F900023282 /* SwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8F9A82650F3F900023282 /* SwiftDemoTests.swift */; };
 		18D8F9B42650F3F900023282 /* SwiftDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8F9B32650F3F900023282 /* SwiftDemoUITests.swift */; };
-		18EE728826513B5400B564E7 /* HTTPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE728726513B5400B564E7 /* HTTPUtil.swift */; };
+		18EE728826513B5400B564E7 /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE728726513B5400B564E7 /* NetworkUtil.swift */; };
+		7CA22E98265235660010C7D7 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA22E97265235660010C7D7 /* ApiServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,8 @@
 		18D8F9AF2650F3F900023282 /* SwiftDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D8F9B32650F3F900023282 /* SwiftDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoUITests.swift; sourceTree = "<group>"; };
 		18D8F9B52650F3F900023282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18EE728726513B5400B564E7 /* HTTPUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPUtil.swift; sourceTree = "<group>"; };
+		18EE728726513B5400B564E7 /* NetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
+		7CA22E97265235660010C7D7 /* ApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +108,13 @@
 				18D8F98E2650F3F600023282 /* AppDelegate.swift */,
 				18D8F9902650F3F600023282 /* SceneDelegate.swift */,
 				18D8F9922650F3F600023282 /* ViewController.swift */,
+				7CA22E97265235660010C7D7 /* ApiServices.swift */,
+				18EE728726513B5400B564E7 /* NetworkUtil.swift */,
 				18D8F9942650F3F600023282 /* Main.storyboard */,
 				18D8F99A2650F3F900023282 /* Assets.xcassets */,
 				18D8F99C2650F3F900023282 /* LaunchScreen.storyboard */,
 				18D8F99F2650F3F900023282 /* Info.plist */,
 				18D8F9972650F3F600023282 /* SwiftDemo.xcdatamodeld */,
-				18EE728726513B5400B564E7 /* HTTPUtil.swift */,
 			);
 			path = SwiftDemo;
 			sourceTree = "<group>";
@@ -264,7 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18EE728826513B5400B564E7 /* HTTPUtil.swift in Sources */,
+				7CA22E98265235660010C7D7 /* ApiServices.swift in Sources */,
+				18EE728826513B5400B564E7 /* NetworkUtil.swift in Sources */,
 				18D8F9992650F3F600023282 /* SwiftDemo.xcdatamodeld in Sources */,
 				18D8F9932650F3F600023282 /* ViewController.swift in Sources */,
 				18D8F98F2650F3F600023282 /* AppDelegate.swift in Sources */,
@@ -374,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -429,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
