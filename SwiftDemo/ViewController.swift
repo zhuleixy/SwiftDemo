@@ -7,16 +7,49 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     let apiServices : ApiServices = ApiServices();
+    let tableview : UITableView = UITableView();
+    var dataSource : [QuarterlyMobileDataUsage]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        apiServices.fetchMobileDataUsage();
-        // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = UIColor.white;
+        self.tableview.frame = self.view.bounds
+        self.tableview.delegate = self;
+        self.tableview.dataSource = self;
+        self.tableview.register(CustomCell.self, forCellReuseIdentifier: "CustomCell")
+        self.view.addSubview(self.tableview);
+        
+        apiServices.fetchMobileDataUsage { (resultArray: [QuarterlyMobileDataUsage]) in
+            self.dataSource = resultArray
+            self.tableview.reloadData()
+        } failure: { (Error) in
+            
+        }
     }
-
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (dataSource != nil) {
+            return dataSource.count;
+        } else {
+            return 0;
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : CustomCell = tableview.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let useage : QuarterlyMobileDataUsage = self.dataSource[indexPath.row]
+        cell.timeLabel?.text = useage.quarter
+        cell.dataLabel?.text = useage.volumeOfMobileData
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44;
+    }
+    
 }
 

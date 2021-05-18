@@ -9,15 +9,15 @@ import UIKit
 
 class NetworkUtil: NSObject {
     
-
+    
     func get(url: String,
              params: [String:String]!,
-             success: @escaping (Any) -> Void,
+             success: @escaping (AnyObject) -> Void,
              failure: @escaping (Error) -> Void) -> Void {
         
         
         var items = [URLQueryItem]()
-
+        
         for (key,value) in params {
             items.append(URLQueryItem(name: key, value: value))
         }
@@ -33,15 +33,24 @@ class NetworkUtil: NSObject {
         let session = URLSession(configuration: config)
         let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             
-            
-          
-            guard let array = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: AnyObject]] else {//转化失败就返回
-                 return
+            if (error != nil) {
+                failure(error!);
+            } else {
+                if (data != nil) {
+                    
+                    do {
+                        let jsonObj =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as AnyObject
+                        success(jsonObj as AnyObject);
+                    } catch {
+                        print(error)
+                    }
+                    
+                } else {
+                    //
+                    
+                    
+                }
             }
-
-
-            
-            print(array)
         })
         task.resume()
     }
