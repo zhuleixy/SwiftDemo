@@ -47,6 +47,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let useage : YearMobileDataUsage = self.dataSource[indexPath.row]
         cell.timeLabel?.text = useage.year
         cell.dataLabel?.text = useage.volumeOfMobileData
+        if useage.isDecrease {
+            cell.contentView.backgroundColor = UIColor.gray
+        } else {
+            cell.contentView.backgroundColor = UIColor.white
+        }
         return cell
     }
     

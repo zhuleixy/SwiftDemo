@@ -14,7 +14,7 @@ class ApiServices: NSObject {
 
     func fetchMobileDataUsage(success: @escaping([QuarterlyMobileDataUsage]) -> Void, failure: @escaping(Error) -> Void) {
         
-        let parDic : [String : String] = ["resource_id": "a807b7ab-6cad-4aa6-87d0-e283a7353a0f", "limit": "40"]
+        let parDic : [String : String] = ["resource_id": "a807b7ab-6cad-4aa6-87d0-e283a7353a0f", "limit": "50"]
                 
         networkUtil.get(url: "https://data.gov.sg/api/action/datastore_search", params: parDic) { (result: AnyObject) in
             
