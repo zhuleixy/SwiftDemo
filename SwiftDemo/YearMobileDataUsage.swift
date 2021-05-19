@@ -36,9 +36,15 @@ class YearMobileDataUsage: NSObject {
         }
         
         var yearArray: [YearMobileDataUsage] = [YearMobileDataUsage]()
-        for (key, value) in yearDataDic {
-            print(value)
-            yearArray.append(value)
+        
+        let dictKeys = [String](yearDataDic.keys)
+        let sortedKeys = dictKeys.sorted()
+        
+        for (key) in sortedKeys {
+            let value = yearDataDic[key]
+            if (value != nil) {
+                yearArray.append(value!)
+            }
         }
         return yearArray
     }

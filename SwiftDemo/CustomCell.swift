@@ -23,12 +23,12 @@ class CustomCell: UITableViewCell {
     }
     
     func setUpUI() {
-        timeLabel = UILabel.init(frame: CGRect(x:15, y:self.contentView.frame.height/2 - 20, width:100, height:17))
+        timeLabel = UILabel.init(frame: CGRect(x:15, y:self.contentView.frame.height/2 - 18, width:100, height:17))
         timeLabel!.textColor = UIColor.black
         timeLabel!.font = UIFont.systemFont(ofSize: 16)
         contentView .addSubview(timeLabel!)
         
-        dataLabel = UILabel.init(frame: CGRect(x:15, y:self.contentView.frame.height/2 + 3, width:100, height:17))
+        dataLabel = UILabel.init(frame: CGRect(x:15, y:self.contentView.frame.height/2 + 1, width:100, height:17))
         dataLabel!.textColor = UIColor.black
         dataLabel!.font = UIFont.systemFont(ofSize: 16)
         contentView .addSubview(dataLabel!)
