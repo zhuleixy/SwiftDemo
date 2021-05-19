@@ -11,7 +11,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let apiServices : ApiServices = ApiServices();
     let tableview : UITableView = UITableView();
-    var dataSource : [QuarterlyMobileDataUsage]!
+    var dataSource : [YearMobileDataUsage]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.view.addSubview(self.tableview);
         
         apiServices.fetchMobileDataUsage { (resultArray: [QuarterlyMobileDataUsage]) in
-            self.dataSource = resultArray
+            
+            let yearData: [YearMobileDataUsage] = YearMobileDataUsage.transQuarterlyDataToYearData(sourceData: resultArray)
+            
+            self.dataSource = yearData
             self.tableview.reloadData()
         } failure: { (Error) in
             
@@ -41,8 +44,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CustomCell = tableview.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
-        let useage : QuarterlyMobileDataUsage = self.dataSource[indexPath.row]
-        cell.timeLabel?.text = useage.quarter
+        let useage : YearMobileDataUsage = self.dataSource[indexPath.row]
+        cell.timeLabel?.text = useage.year
         cell.dataLabel?.text = useage.volumeOfMobileData
         return cell
     }

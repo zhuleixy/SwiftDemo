@@ -20,6 +20,7 @@
 		7CA22E98265235660010C7D7 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA22E97265235660010C7D7 /* ApiServices.swift */; };
 		7CB71F3A26535EE10084279C /* QuarterlyMobileDataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB71F3926535EE10084279C /* QuarterlyMobileDataUsage.swift */; };
 		7CB71F5F2653B37D0084279C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB71F5E2653B37D0084279C /* CustomCell.swift */; };
+		7CCF94422654A39800FCD895 /* YearMobileDataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCF94412654A39800FCD895 /* YearMobileDataUsage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		7CA22E97265235660010C7D7 /* ApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
 		7CB71F3926535EE10084279C /* QuarterlyMobileDataUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarterlyMobileDataUsage.swift; sourceTree = "<group>"; };
 		7CB71F5E2653B37D0084279C /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		7CCF94412654A39800FCD895 /* YearMobileDataUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearMobileDataUsage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				7CA22E97265235660010C7D7 /* ApiServices.swift */,
 				18EE728726513B5400B564E7 /* NetworkUtil.swift */,
 				7CB71F3926535EE10084279C /* QuarterlyMobileDataUsage.swift */,
+				7CCF94412654A39800FCD895 /* YearMobileDataUsage.swift */,
 				18D8F9942650F3F600023282 /* Main.storyboard */,
 				18D8F99A2650F3F900023282 /* Assets.xcassets */,
 				18D8F99C2650F3F900023282 /* LaunchScreen.storyboard */,
@@ -278,6 +281,7 @@
 				18D8F9992650F3F600023282 /* SwiftDemo.xcdatamodeld in Sources */,
 				7CB71F3A26535EE10084279C /* QuarterlyMobileDataUsage.swift in Sources */,
 				18D8F9932650F3F600023282 /* ViewController.swift in Sources */,
+				7CCF94422654A39800FCD895 /* YearMobileDataUsage.swift in Sources */,
 				18D8F98F2650F3F600023282 /* AppDelegate.swift in Sources */,
 				7CB71F5F2653B37D0084279C /* CustomCell.swift in Sources */,
 				18D8F9912650F3F600023282 /* SceneDelegate.swift in Sources */,

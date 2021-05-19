@@ -11,4 +11,7 @@ class QuarterlyMobileDataUsage {
     var id: Int?
     var quarter: String?
     var volumeOfMobileData: String?
+    
+
+    
 }
